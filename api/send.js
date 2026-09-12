@@ -21,12 +21,21 @@ export default async function handler(req, res) {
             })
         });
 
+        const data = await response.json();
+
         if (response.ok) {
             return res.status(200).json({ success: true });
         } else {
-            return res.status(500).json({ error: 'Telegram send failed' });
+            // যদি টেলিগ্রাম এরর দেয়, সেটা আমরা দেখতে পাব
+            return res.status(500).json({ 
+                error: 'Telegram error', 
+                details: data 
+            });
         }
     } catch (error) {
-        return res.status(500).json({ error: 'Server error' });
+        return res.status(500).json({ 
+            error: 'Server error', 
+            message: error.message 
+        });
     }
-}
+        }
